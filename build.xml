@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<!-- ====================================================================== 
+     Jan 7, 2549 7:26:30 PM                                                        
+
+     TheLostSymphony    
+     Perfect Combination of beat mania and shooting game.
+                   
+     e-liXiR                                                                
+     ====================================================================== -->
+<project name="TheLostSymphonyFinal" default="run">
+	
+    <description>
+            Perfect Combination of beat mania and shooting game.
+    </description>
+	<property name="src_dir" value="./"/>
+	<property name="dest_dir" value="./"/>
+	<property name="javac_path=" value="c:/j2sdk1.4.2_04/bin/javac.exe"/>
+
+	<target name="compile">
+		<javac 
+			srcdir="${src_dir}" destdir="${dest_dir}"
+			fork="true"
+			executable="${javac_path}"
+			includes="*.java"
+			excludes="./GTGE/*.*,*.jar,*.classpath,*.project,*.bat"
+		/>
+	</target>
+
+
+	<target name="unzip">
+		<unzip src="golden_0_2_3.jar" dest="./"/>
+		<unzip src="GTGE_GUI_0_1_0.jar" dest="./"/>
+		<unzip src="jl1.0.jar" dest="./"/>
+		<unzip src="tritonus_share.jar" dest="./"/>
+		<unzip src="mp3spi1.9.4.jar" dest="./"/>
+	</target>
+
+	
+	<target name="makejar" depends="compile,unzip">
+    	<jar 
+    		jarfile="LS.jar" 
+    		basedir="." 
+    		manifest="manifest.mft"
+    		excludes="GTGE/,*/*.java,*.java,*.classpath,*.project,*.bat,*.xml,*.html,*.txt,*.jar,*.log"
+    	/>
+    </target>
+	
+	<target name="finalize" depends="makejar">
+		<delete dir="com/"/>    	
+		<delete dir="org/"/>    	
+		<delete dir="javazoom/"/>    	
+		<delete dir="META-INF/"/>
+	</target>
+	
+    <target name="run" depends="finalize" description="--> Perfect Combination of beat mania and shooting game.">
+        <java jar="LS.jar" fork="true" maxmemory="256m"/>
+    </target>
+
+</project>
+

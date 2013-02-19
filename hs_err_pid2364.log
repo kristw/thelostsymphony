@@ -1,0 +1,87 @@
+
+An unexpected exception has been detected in native code outside the VM.
+Unexpected Signal : EXCEPTION_ACCESS_VIOLATION (0xc0000005) occurred at PC=0x2E17F06
+Function=Java_sun_print_Win32PrintJob_endPrintRawData+0x1D42
+Library=C:\Program Files\Java\j2re1.4.2_04\bin\awt.dll
+
+Current Java thread:
+	at sun.awt.windows.Win32BackBufferSurfaceData.initSurface(Native Method)
+	at sun.awt.windows.Win32BackBufferSurfaceData.createData(Unknown Source)
+	at sun.awt.windows.Win32BackBuffer.createHWData(Unknown Source)
+	at sun.awt.windows.WVolatileImage.initAcceleratedBackground(Unknown Source)
+	at sun.awt.image.SunVolatileImage.<init>(Unknown Source)
+	at sun.awt.windows.WVolatileImage.<init>(Unknown Source)
+	at sun.awt.windows.Win32BackBuffer.<init>(Unknown Source)
+	at sun.awt.windows.WComponentPeer.createBackBuffer(Unknown Source)
+	- locked <0x1001d0e8> (a sun.awt.windows.WFramePeer)
+	at sun.awt.windows.WComponentPeer.replaceSurfaceData(Unknown Source)
+	- locked <0x1001d0e8> (a sun.awt.windows.WFramePeer)
+	- locked <0x109f69a8> (a java.awt.Component$AWTTreeLock)
+	at sun.awt.windows.WComponentPeer.createBuffers(Unknown Source)
+	- locked <0x1001d0e8> (a sun.awt.windows.WFramePeer)
+	at java.awt.Component$FlipBufferStrategy.createBuffers(Unknown Source)
+	at java.awt.Component$FlipBufferStrategy.<init>(Unknown Source)
+	at java.awt.Component.createBufferStrategy(Unknown Source)
+	at java.awt.Window.createBufferStrategy(Unknown Source)
+	at java.awt.Component.createBufferStrategy(Unknown Source)
+	at java.awt.Window.createBufferStrategy(Unknown Source)
+	at com.golden.gamedev.engine.graphics.FullScreenMode.c(Unknown Source)
+	at com.golden.gamedev.engine.graphics.FullScreenMode.<init>(Unknown Source)
+	at com.golden.gamedev.GameLoader.setup(Unknown Source)
+	at com.golden.gamedev.GameLoader.setup(Unknown Source)
+	at LostSymphony.LostSymphony.main(LostSymphony.java:53)
+
+Dynamic libraries:
+0x00400000 - 0x00407000 	C:\Program Files\Java\j2re1.4.2_04\bin\javaw.exe
+0x7C900000 - 0x7C9B0000 	C:\WINDOWS\system32\ntdll.dll
+0x7C800000 - 0x7C8F4000 	C:\WINDOWS\system32\kernel32.dll
+0x77DD0000 - 0x77E6B000 	C:\WINDOWS\system32\ADVAPI32.dll
+0x77E70000 - 0x77F01000 	C:\WINDOWS\system32\RPCRT4.dll
+0x77D40000 - 0x77DD0000 	C:\WINDOWS\system32\USER32.dll
+0x77F10000 - 0x77F57000 	C:\WINDOWS\system32\GDI32.dll
+0x77C10000 - 0x77C68000 	C:\WINDOWS\system32\MSVCRT.dll
+0x76390000 - 0x763AD000 	C:\WINDOWS\system32\IMM32.DLL
+0x629C0000 - 0x629C9000 	C:\WINDOWS\system32\LPK.DLL
+0x74D90000 - 0x74DFB000 	C:\WINDOWS\system32\USP10.dll
+0x08000000 - 0x08138000 	C:\Program Files\Java\j2re1.4.2_04\bin\client\jvm.dll
+0x76B40000 - 0x76B6D000 	C:\WINDOWS\system32\WINMM.dll
+0x10000000 - 0x10007000 	C:\Program Files\Java\j2re1.4.2_04\bin\hpi.dll
+0x00940000 - 0x0094E000 	C:\Program Files\Java\j2re1.4.2_04\bin\verify.dll
+0x00950000 - 0x00969000 	C:\Program Files\Java\j2re1.4.2_04\bin\java.dll
+0x00970000 - 0x0097D000 	C:\Program Files\Java\j2re1.4.2_04\bin\zip.dll
+0x02DB0000 - 0x02EBF000 	C:\Program Files\Java\j2re1.4.2_04\bin\awt.dll
+0x73000000 - 0x73026000 	C:\WINDOWS\system32\WINSPOOL.DRV
+0x774E0000 - 0x7761D000 	C:\WINDOWS\system32\ole32.dll
+0x5AD70000 - 0x5ADA8000 	C:\WINDOWS\system32\uxtheme.dll
+0x03130000 - 0x03180000 	C:\Program Files\Java\j2re1.4.2_04\bin\fontmanager.dll
+0x73760000 - 0x737A9000 	C:\WINDOWS\system32\ddraw.dll
+0x73BC0000 - 0x73BC6000 	C:\WINDOWS\system32\DCIMAN32.dll
+0x73940000 - 0x73A10000 	C:\WINDOWS\system32\D3DIM700.DLL
+0x63000000 - 0x63013000 	C:\WINDOWS\system32\SynTPFcs.dll
+0x77C00000 - 0x77C08000 	C:\WINDOWS\system32\VERSION.dll
+0x03230000 - 0x0323E000 	C:\Program Files\MessengerPlus! 3\MsgPlusLoader1.dll
+0x74720000 - 0x7476B000 	C:\WINDOWS\system32\MSCTF.dll
+0x032A0000 - 0x032B6000 	C:\Program Files\Logitech\SetPoint\lgscroll.dll
+0x755C0000 - 0x755EE000 	C:\WINDOWS\system32\msctfime.ime
+0x76C90000 - 0x76CB8000 	C:\WINDOWS\system32\imagehlp.dll
+0x59A60000 - 0x59B01000 	C:\WINDOWS\system32\DBGHELP.dll
+0x76BF0000 - 0x76BFB000 	C:\WINDOWS\system32\PSAPI.DLL
+
+Heap at VM Abort:
+Heap
+ def new generation   total 576K, used 195K [0x10010000, 0x100b0000, 0x109e0000)
+  eden space 512K,  25% used [0x10010000, 0x10030d20, 0x10090000)
+  from space 64K, 100% used [0x10090000, 0x100a0000, 0x100a0000)
+  to   space 64K,   0% used [0x100a0000, 0x100a0000, 0x100b0000)
+ tenured generation   total 1408K, used 186K [0x109e0000, 0x10b40000, 0x18010000)
+   the space 1408K,  13% used [0x109e0000, 0x10a0e8c0, 0x10a0ea00, 0x10b40000)
+ compacting perm gen  total 4096K, used 3053K [0x18010000, 0x18410000, 0x1c010000)
+   the space 4096K,  74% used [0x18010000, 0x1830b538, 0x1830b600, 0x18410000)
+
+Local Time = Tue Feb 21 22:38:44 2006
+Elapsed Time = 12
+#
+# The exception above was detected in native code outside the VM
+#
+# Java VM: Java HotSpot(TM) Client VM (1.4.2_04-b05 mixed mode)
+#
